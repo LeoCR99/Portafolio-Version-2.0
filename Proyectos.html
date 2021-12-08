@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="shortcut icon" href="https://firebasestorage.googleapis.com/v0/b/mi-portafolio-4b23c.appspot.com/o/logo.png?alt=media&token=58b00ba4-ec6f-4c02-b800-376902e696b6">
+    <title>PORTAFOLIO</title>
+</head>
+<body>
+
+    <div class="caja cabecero">
+        <span id="nombre"><i class="bi bi-chevron-compact-left"></i>LEONARDO<i class="bi bi-chevron-compact-right"></i></span>
+        <div class="caja menu">
+            <a href="index.html">INICIO</a>
+            <a href="Proyectos.html">PROYECTOS</a>
+            <a href="Trayectoria.html">TRAYECTORIA</a>
+        </div>
+        <div id="menu-mostrar"><i class="bi bi-arrow-bar-right"></i></div>
+        <div id="menu-ocultar"><i class="bi bi-arrow-bar-left"></i></div>
+    </div>
+    <div id="menu-desplegable" class="caja menu2">
+        <a href="index.html">INICIO</a>
+        <a href="Proyectos.html">PROYECTOS</a>
+        <a href="Trayectoria.html">TRAYECTORIA</a>
+    </div>
+
+    <div class="caja proyectos">
+        <span class="titulo"><i class="bi bi-chevron-compact-left"></i>Proyectos<i class="bi bi-chevron-compact-right"></i></span>
+
+        <div id="pro1" class="caja proyecto">
+            <div class="caja boton">
+                <span>PROYECTO 1: Mi Portafolio</span>
+                <span><i id="mos1" class="bi bi-arrow-down" ></i><i id="ocu1" class="bi bi-arrow-up"></i></span>
+            </div>
+            <div id="info1" class="caja mostrar">
+                <img src="https://firebasestorage.googleapis.com/v0/b/mi-portafolio-4b23c.appspot.com/o/proyecto1.png?alt=media&token=43baa4b6-08ac-48c4-aac3-3aac8009a9e9" alt="Proyecto Nº1">
+                <div class="caja">
+                    <p>Mi primer proyecto fue la creacion de este portafolio, realice diferentes versiones pero finalmente este fue el que
+                    se quedo como oficial, tras la creacion del mismo se me dificulto mucho los estilos y las animaciones por medio de javascrip</p> 
+                </div>
+                <span>Codigo <br> <a href="https://github.com/LeoCR99/Portafolio-Version-2.0" target="_blank"><i class="bi bi-file-earmark-code-fill"></i></a></span>    
+            </div>
+        </div>
+        <!--
+        <div id="pro2" class="caja proyecto">
+            <div class="caja boton">
+                <span>PROYECTO 2: Mi Portafolio</span>
+                <span><i id="mos2" class="bi bi-arrow-down" ></i><i id="ocu2" class="bi bi-arrow-up"></i></span>
+            </div>
+            <div id="info2" class="caja mostrar">
+                <img src="imagenes/proyecto1.png" alt="Proyecto Nº1">
+                <div class="caja">
+                    <p>Mi primer proyecto fue la creacion de este portafolio, realice diferentes versiones pero finalmente este fue el que
+                    se quedo como oficial, tras la creacion del mismo se me dificulto mucho los estilos y las animaciones por medio de javascrip</p> 
+                </div>
+                <span>Codigo</span>    
+            </div>
+        </div> -->
+
+    </div>
+        
+    <script src="AcccionesProyectos.js"></script>
+</body>
+</html>

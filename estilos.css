@@ -1,0 +1,781 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Major+Mono+Display&family=Nanum+Gothic+Coding:wght@700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css");
+
+html{
+    scroll-behavior: smooth;
+    /*scroll-snap-type: y mandatory;*/
+    background-color: #272727;
+    color: #fff;
+}
+body{
+    margin: 0;
+    font-family: 'Cutive Mono', monospace;
+}
+.caja{
+    display: flex;
+    flex-wrap: wrap;    
+}
+.titulo{
+    color: #fff;
+    margin: 20px 0;
+    font-size: 50px;
+    font-weight: bolder;
+}
+.titulo i{
+    color: #2185D5;
+}
+#fondo{
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/mi-portafolio-4b23c.appspot.com/o/fondo2.jpg?alt=media&token=59336b19-fe01-4e0d-810e-d7d610103201);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*CABECERO Y MENU*/
+#subir{
+    font-size: 50px;
+    position: fixed;
+    color: #2185D5;
+    z-index: 2;
+    opacity: 0;
+    transition: all.5s;
+}
+#subir:hover{
+    transform: scale(1.1,1.1);
+    color: #fff;
+}
+.caja.cabecero{
+    top: 0;
+    position: fixed;
+    width: 100%;
+    justify-content: space-between;
+    height: 35px;
+    padding-bottom: 5px;
+    background-color: transparent;
+    z-index: 1;
+    transition: all .5s;
+}
+.caja.cabecero:hover{
+    background-color: rgba(39, 39, 39, .8);
+}
+.caja.menu{
+    margin: 0;
+    padding: 0;
+    height: 25px;
+}
+.caja.menu2{
+    opacity: 0;
+    position: fixed;
+    display: flex;
+    z-index: 2;
+    background-color: #272727;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    top:7vh;
+    height: 93vh;
+    width: 0;
+    transition: all .5s;
+    overflow: none;
+}
+.caja.menu2 > a:link, .caja.menu2 > a:visited{
+    pointer-events: none;
+    text-decoration: none;
+    font-size: 30px;
+    margin: 30px 0;
+    padding: 20px 50px;
+    background-color: #2185D5;
+    border-radius: 20px ;
+}
+#menu-mostrar{
+    display: none;
+    font-size: 32px;
+    transition: all .5s;
+}
+#menu-ocultar{
+    display: none;
+    font-size: 32px;
+    transition: all .5s;
+}
+#nombre{
+    margin: 3px 5px;
+    font-size: 25px;
+    font-weight: bolder;
+}
+#nombre i{
+    color: #2185D5;
+    font-size: 30px;
+}
+.caja.menu a:link, a:visited{
+    font-weight: bolder;
+    color: #fff;
+    text-decoration: none;
+    margin: 3px 25px;
+    border-bottom: 3px solid transparent;
+    padding: 5px;
+    transition: all .5s;
+}
+.caja.menu a:hover{
+    color: #2185D5;
+    border-bottom: 3px solid #2185D5;
+}
+
+/*Saludo*/
+.caja.saludo{
+    height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+}
+.caja.presen{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+.caja.presen #nom{
+    position: relative;
+    opacity: 0;
+    font-size: 70px;
+    font-weight: bolder;
+}
+.caja.presen p{
+    position: relative;
+    opacity: 0;
+    margin: 0;
+    font-size: 30px;
+    color: #2185D5;
+}
+.caja.presen a:link, a:visited{
+    display: inline-block;
+    position: relative;
+    opacity: 0;
+    padding: 7px;
+    margin: 25px 0;
+    color: #fff;
+    border: 3px solid transparent;
+    font-size: 18px;
+    text-decoration: none;
+    transition: font-weight .1s, border .5s, color .1s, border-radius .5s, transform .5s;
+}
+@keyframes animacionCV {
+    0%   {opacity: 1; top:50px;}
+    100%   {opacity: 1; top:0px}
+  }
+.caja.presen a:hover{
+    transform: scale(1.1,1.1);
+    font-weight: bolder;
+    border: 3px solid #2185D5;
+    color: #2185D5;
+    border-radius: 10px;
+}
+
+/*Sobre Mi*/
+.caja.sobreMi{
+    width: 100%;
+    height: 120vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #272727;
+}
+.caja.informacion{
+    color: #000;
+    text-align: center;
+    font-size: 22px;
+    width: 80%;
+    height: 90%;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255);
+    box-shadow: 8px 8px 20px 2px rgba(33, 133, 213,.5);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.caja.informacion ul{
+    list-style: none;
+    border: 0px;
+    margin: 0px;
+}
+.triangulo {
+    position: relative;
+    right: -10px;
+    bottom: 200px;
+    width: 0; 
+    height: 0; 
+    border-left: 80px solid rgba(255, 255, 255);
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent; 
+    transform: rotate(180deg);
+}
+.caja.foto{
+    position: relative;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/mi-portafolio-4b23c.appspot.com/o/foto.png?alt=media&token=49c794d3-f5f7-4411-8610-4fd57969b04d);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    width: 100px;
+    height: 100px;
+    
+    transform: scale(0,0);
+    bottom: 200px;
+    border-radius: 50%;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s;
+}/*
+#giro{
+    border: 5px solid #272727;
+    transition: all .5s;
+    border-top:5px solid #2185D5;
+    border-bottom:5px solid #2185D5;
+    animation: animacionFoto 4s linear infinite;
+}
+@keyframes animacionFoto {
+    0%   {transform: rotate(0deg);}
+    100%   {transform: rotate(360deg);}
+  }*/
+.caja.foto2{
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/mi-portafolio-4b23c.appspot.com/o/foto.png?alt=media&token=49c794d3-f5f7-4411-8610-4fd57969b04d);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform: scale(0,0);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s;
+}
+.caja.rede{
+    position: relative;
+    width: 50px;
+    opacity: 0;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(33, 133, 213,.2);
+    border-radius: 10px;
+    top: 120px;
+    transition: all .5s;
+}
+.caja.rede a:link, .caja.rede a:visited{
+    position: relative;
+    color: #fff;
+    font-size: 20px;
+    display: block;
+    margin-bottom: 22px;
+    transition: all .5s;
+}
+.caja.rede a:hover{
+    transform: scale(2,2);
+}
+.caja.foto:hover .caja.rede{
+    opacity: 1;
+}
+/*SKILLS*/
+.caja.skills.frontend{
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.caja.skills.frontend > div, .caja.skills.caja.skills.otras > div{
+    background-color: #272727;
+    border-radius: 20px;
+    width: 90%;
+    height: 80%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+}
+.caja.skills.otras{
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.caja.skill{
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    background-color: #272727;
+    position: relative;
+    cursor: pointer;
+}
+.caja.skill > img{
+    width: 120px;
+    height: 120px;
+}
+/*HTML*/
+.caja.skill.html{
+    position: relative;
+    top: 50px;
+    opacity: 0;
+    border: 5px solid transparent;
+    transition: all .5s;
+}
+.caja.skill.html:hover{
+    transform: translateY(-30px);
+    border-top-color: #f06429 ;
+    border-left-color: #f06429;
+    border-bottom-color: #e54c26 ;
+    border-right-color: #e54c26 ;
+    border-radius: 10px;
+}
+.caja.skill.html::before{
+    position: absolute;
+    content: ' ';
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(-45deg,#e54c26 ,#f06429 );
+    filter: blur(15px);
+    z-index:-1;
+}
+/*CSS*/
+.caja.skill.css{
+    position: relative;
+    top: 50px;
+    opacity: 0;
+    border: 5px solid transparent;
+    transition: all .5s;
+}
+.caja.skill.css:hover{
+    transform: translateY(-30px);
+    border-top-color: #379cd7 ;
+    border-left-color: #379cd7;
+    border-bottom-color: #2062ae ;
+    border-right-color: #2062ae ;
+    border-radius: 10px;
+}
+.caja.skill.css::before{
+    position: absolute;
+    content: ' ';
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(-45deg,#2062ae ,#379cd7 );
+    filter: blur(15px);
+    z-index:-1;
+}
+/*JAVA SCRIPT*/
+.caja.skill.js{
+    position: relative;
+    top: 50px;
+    opacity: 0;
+    border: 5px solid transparent;
+    transition: all .5s;
+}
+.caja.skill.js:hover{
+    transform: translateY(-30px);
+    border-top-color: #f0bf23 ;
+    border-left-color: #f0bf23;
+    border-bottom-color: #e6a228 ;
+    border-right-color: #e6a228 ;
+    border-radius: 10px;
+}
+.caja.skill.js::before{
+    position: absolute;
+    content: ' ';
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(-45deg,#e6a228 ,#f0bf23 );
+    filter: blur(15px);
+    z-index:-1;
+}
+
+.caja.skill.o{
+    position: relative;
+    top: 50px;
+    opacity: 0;
+    transition: all .5s;
+    border-radius: 20px;
+}
+.caja.skill.o:hover{
+    transform: translateY(-30px);
+    box-shadow: 0px 10px 20px 0px rgba(33, 133, 213,.3);
+}
+/*CONTACTO*/
+.caja.contacto{
+    scroll-snap-align: start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.caja.redes{
+    width: 90%;
+    margin: 30px 0 80px 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.caja.redes a:link, .caja.redes a:visited{
+    margin:0 20px;
+    font-size: 30px;
+    color: #fff;
+    transition: all .5s;
+}
+.caja.redes a:hover{
+    transform: scale(1.8,1.8);
+    color: #2185D5;
+    text-shadow: 1px 1px 5px #2185D5;
+}
+
+/*PROYECTOS*/
+.caja.proyectos{
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.caja.proyecto{
+    background-color: rgba(255, 255, 255,.1);
+    border-radius: 10px;
+    padding: 15px 0;
+    margin: 30px 0;
+    width: 80%;
+    height: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    transition: all .8s;
+}
+.mostrar{
+    opacity: 0;
+    top: 80px;
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: all .8s;
+}
+.boton{
+    margin: 0;
+    width: 95%;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+}
+.boton span i{
+    margin: 0 2px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 5px;
+    transition: all .5s;
+}
+.bi.bi-arrow-up{
+    opacity: 0;
+}
+.mostrar > img{
+    width: 25%;
+    height: 95%;
+}
+.mostrar > div{
+    width: 60%;
+    height: 95%;
+    align-items: center;
+    justify-content: center;
+}
+.mostrar > div p{
+    margin: 0;
+    text-align: justify;
+}
+.mostrar > span{
+    
+    text-align: center;
+    font-size: 20px;
+    width: 10%;
+    height: 95%;
+}
+.mostrar > span i{
+    cursor: pointer;
+    font-size: 50px;
+    transition: all .5s;
+}
+.mostrar > span i:hover{ 
+    text-shadow: 0 0 20px #2185D5;
+}
+.caja.boton i:hover{
+    color: #2185D5;
+}
+/*TRAYECTORIA*/
+.caja.trayectoria{
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.caja.cursos{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.caja.curso{
+    position: relative;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    margin: 50px 0;
+    width: 100%;
+    height: 200px;
+}
+.caja.c{
+    position: relative;
+    width: 500px;
+    background-color: rgba(255, 255, 255,.05);
+    border-radius: 5px;
+    transition: all .5s;
+    cursor: pointer;
+}
+.caja.c.iz{
+    justify-content: start;
+    right: 400px;
+}
+.caja.c.de{
+    justify-content: end;
+    left: 400px;
+}
+.caja.c.iz img, .caja.c.de img{
+    margin: 0 10px;
+    width: 200px;
+    height: 200px;
+    transition: all .5s;
+}
+.linea{
+    position: absolute;
+    width: 0;
+    height: 300px;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    z-index: -1;
+}
+.lineaIz{
+    position: absolute;
+    left: 525px;
+    width: 140px;
+    height: 0;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    z-index: -1;
+}
+.lineaDe{
+    position: absolute;
+    right: 525px;
+    width: 140px;
+    height: 0;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    z-index: -1;
+}
+.texto{
+    font-size: 18px;
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    width: 325px;
+    height: 200px;
+    transition: all .5s;
+}
+.caja.c.iz .texto{
+    left: 200px;
+}
+.caja.c.de .texto{
+    right: 200px;
+}
+.texto span{
+    font-size: 25px;
+    border-bottom: 3px solid #2185D5;
+}
+.texto a:link, .texto a:visited{
+    color: #2185D5;
+    font-size: 40px;
+    transition: all .5s;
+}
+.texto a:hover{
+    color: #fff;
+    text-shadow: 0 0 20px #2185d5;
+}
+.caja.c.iz:hover{
+    border-radius: 20px;
+    background-color: transparent;
+    background-image: linear-gradient(to right,rgba(255, 255, 255,.3),transparent,transparent);
+}
+.caja.c.de:hover{
+    border-radius: 20px;
+    background-color: transparent;
+    background-image: linear-gradient(to left,rgba(255, 255, 255,.3),transparent,transparent);
+}
+.caja.c.de:hover .texto{
+    opacity: 1;
+}
+.caja.c.iz:hover .texto{
+    opacity: 1;
+}
+
+@media screen and (max-width: 850px) {
+    /*CV*/
+    .caja.presen a:link, a:visited{
+        border: 3px solid #2185D5;
+        border-radius: 20px;
+    }
+    /*CV*/
+    .caja.cabecero{
+        width: 100vw;
+    }
+  #fondo, .caja.saludo, .caja.presen, .caja.skills.frontend, .caja.skills.otras{
+      width: 100vw;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
+  .caja.sobreMi{
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      width: 100vw;
+      height: 200vh;
+    }
+  .triangulo{
+    position: relative;
+    margin: 0;
+    right: 0;
+    bottom: 0;
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid rgba(255, 255, 255);
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent; 
+    transform: rotate(270deg);
+    }
+  .caja.foto{
+    bottom: 0;
+    }
+  .caja.informacion{
+      width: 90%;
+      height: 80%;
+    }
+  .caja.skills.frontend{
+    height: 150vh;
+    }
+    .caja.skills.otras{
+        height: 150vh;
+    }
+    .caja.skill{
+        margin: 0 10px;
+        width: 120px;
+        height: 120px;
+    }
+    .caja.skill > img{
+        width: 110px;
+        height: 110px;
+    }
+    .caja.menu{
+        display: none;
+    }
+    #menu-mostrar{
+        display: block;
+        font-size: 32px;
+    }
+    #menu-ocultar{
+        display: none;
+        font-size: 32px;
+    }
+    .titulo{
+        color: #fff;
+        margin: 20px 0;
+        font-size: 30px;
+        font-weight: bolder;
+    }
+    .caja.proyecto{
+        margin: 10px 0;
+        width: 90%;
+    }
+    .boton span {
+        font-size: 18px;
+    }
+    .mostrar{
+        font-size: 13px;
+        flex-direction: column;
+        justify-content: center;
+        overflow: scroll;
+    }
+    .mostrar > img{
+        display: none;
+    }
+    .mostrar > div{
+        margin-left: 5px;
+        width: 65%;
+    }
+    .mostrar > span{
+        width: 30%;
+    }
+    /*Trayectoria*/
+    .caja.c{
+        background-color: transparent;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 90vw;
+        height: 120px;
+    }
+    .caja.c.iz{
+        justify-content: center;
+        right: 0px;
+    }
+    .caja.c.de{
+        justify-content: center;
+        left: 0px;
+    }
+    .lineaIz, .lineaDe{
+        display: none;
+    }
+    .texto{
+        background-color: #272727;
+        font-size: 12px;
+        position: relative;
+        text-align: center;
+        opacity: 1;
+    }
+    .caja.c.iz .texto{
+        left: 0px;
+    }
+    .caja.c.de .texto{
+        right: 0px;
+    }
+    .caja.c.iz img, .caja.c.de img{
+        margin: 0 10px;
+        width: 150px;
+        height: 100px;
+        transition: all .5s;
+    }
+}
